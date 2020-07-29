@@ -1,8 +1,10 @@
-package web.config.handler;
+package ru.web.config.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import ru.web.models.Role;
+import ru.web.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,13 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException, ServletException {
-        httpServletResponse.sendRedirect("/hello");
+        User user = (User) authentication.getPrincipal();
+        System.out.println(user.getRoles());
+        if(user.getAuthorities().contains(Role.ROLE_ADMIN)){
+            httpServletResponse.sendRedirect("/hello");
+        }else {
+            httpServletResponse.sendRedirect("/myInfo");
+        }
+        //checking
     }
 }

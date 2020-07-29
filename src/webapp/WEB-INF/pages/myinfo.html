@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/logout}">Sign Out</a>
+<h2> My ID is : <th th:utext="${id}"></th> My username is : <th th:utext="${username}"></th></h2>
+<h2> My email is : <th th:utext="${email}"></th> My password is : <th th:utext="${password}"></th></h2>
+<h2> My role is : <th th:utext="${role}"></h2>
+</body>
+</html>

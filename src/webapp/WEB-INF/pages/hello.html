@@ -7,9 +7,10 @@
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+    <p> Where do you wanna go? </p>
 </div>
+<a th:href="@{/admin/panel}">TO ADMIN PANEL</a>
+<a th:href="@{/myInfo}">TO MY PROFILE</a>
+
 </body>
 </html>
