@@ -10,9 +10,9 @@ public interface UserService extends UserDetailsService {
 
     void addUser(User user);
 
-    public User findOne( long id );
+    User findOne(long id );
 
     void deleteById(Long id);
 
-    public void edit(User user);
+    void edit(User user);
 }

@@ -30,6 +30,6 @@ public class UserController {
         model.addAttribute("password", user.getPassword());
         model.addAttribute("username", user.getUsername());
         model.addAttribute("role", user.getAuthorities());
-        return "myinfo";
+        return "/WEB-INF/pages/myinfo.html";
     }
 }

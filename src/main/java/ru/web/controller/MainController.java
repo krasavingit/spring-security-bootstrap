@@ -1,13 +1,8 @@
 package ru.web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import ru.web.models.Role;
-import ru.web.models.User;
-import ru.web.services.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,12 +25,12 @@ public class MainController {
 		messages.add("I'm Spring MVC-SECURITY application");
 		messages.add("5.2.0 version by sep'19 ");
 		model.addAttribute("messages", messages);
-		return "hello";
+		return "/hello.html";
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String loginPage() {
-		return "login";
+		return "/login.html";
 	}
 
 //	@PostMapping(value = "loginCustom")

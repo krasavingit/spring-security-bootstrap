@@ -1,22 +1,15 @@
 package ru.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.web.dao.UserDao;
 import ru.web.models.Role;
 import ru.web.models.User;
 import ru.web.services.UserService;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,7 +28,7 @@ public class SignController {
 
     @GetMapping("/register")
     public String rigester(){
-        return "register";
+        return "/register.html";
     }
 
     @PostMapping("/register/signUP")
@@ -46,7 +39,7 @@ public class SignController {
         user.setEmail(email);
         user.setPassword(password);
         Set<Role> set = new HashSet<>();
-        set.add(Role.ROLE_ADMIN);
+        set.add(Role.ROLE_USER);
         user.setRoles(set);
         userService.addUser(user);
         return "redirect:/login";
