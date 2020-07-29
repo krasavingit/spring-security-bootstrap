@@ -3,16 +3,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login page</title>
 </head>
 <body>
-<div>
-    <form method="post" action="login">
-        <input name="username"/>
-        <input name="password"/>
-        <input type="submit"/>
-    </form>
-</div>
-<a href="/register"> to REG FORM</a>
+
+<div class="container">
+    <div class="row">
+        <div style="margin-top: 150px; margin-left:40%;">
+            <h3><strong>Please sign in</strong></h3>
+            <form method="post" action="/login" autocomplete="off">
+                <div class="form-group">
+                    <input name="username"  class="form-control" id="username" placeholder="Email adress">
+                    <input name="password"  class="form-control" id="password" placeholder="Password">
+                </div>
+                <button style="margin-top: -10px;" type="submit" class="btn btn-primary form-control">Sign in</button>
+            </form>
+        </div>
+    </div>
+<!--<div>-->
+<!--    <form method="post" action="login">-->
+<!--        <input name="username"/>-->
+<!--        <input name="password"/>-->
+<!--        <input type="submit"/>-->
+<!--    </form>-->
+<!--</div>-->
+<!--<a href="/register"> to REG FORM</a>-->
 </body>
 </html>
