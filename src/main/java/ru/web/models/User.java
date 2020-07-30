@@ -17,6 +17,13 @@ public class User implements UserDetails {
     private Long id;
     @Column
     private String username;
+
+
+
+    @Column
+    private String lastname;
+    @Column
+    private byte age;
     @Column
     private String email;
     @Column
@@ -102,5 +109,19 @@ public class User implements UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getLastname() {
+        return lastname;
+    }
 
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public byte getAge() {
+        return age;
+    }
+
+    public void setAge(byte age) {
+        this.age = age;
+    }
 }

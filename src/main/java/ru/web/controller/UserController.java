@@ -25,11 +25,12 @@ public class UserController {
     public String getUsers(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = (User) authentication.getPrincipal();
-        model.addAttribute("email", user.getEmail());
-        model.addAttribute("id", user.getId());
-        model.addAttribute("password", user.getPassword());
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("role", user.getAuthorities());
-        return "/WEB-INF/pages/myinfo.html";
+        model.addAttribute("authUsername", user.getUsername());
+        model.addAttribute("authLastname", user.getLastname());
+        model.addAttribute("authRole", user.getRoles());
+        model.addAttribute("authID", user.getId());
+        model.addAttribute("authEmail", user.getEmail());
+        model.addAttribute("authAge", user.getAge());
+        return "myinfo";
     }
 }
